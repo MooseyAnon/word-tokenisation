@@ -25,9 +25,13 @@ def open_csv(afile):
 	"""open and read csv file"""
 
 	try:
-		f = open(afile, 'rb')
-		return f 
-	except IOError:
+		f = open(afile, 'r')
+		f1 = f.read() # took an extra step to enable house keeping
+		logger.debug("open_csv successfully opened{0}".format(afile))
+		f.close() # house keeping
+		logger.debug("open_csv successfully closed {0}".format(afile))
+		return f1
+	except IOError as err:
 		logger.debug("something went wrong trying to open {0}. Error: {1}".format(afile, err))
 		return err
 
@@ -36,8 +40,12 @@ def open_txt(afile):
 	"""open and read a txt file"""
 
 	try:
-		f = open(afile, 'r').read()
-		return f 
+		f = open(afile, 'r')
+		f1 = f.read() # took an extra step to enable house keeping
+		logger.debug("open_txt successfully opened{0}".format(afile))
+		f.close() # house keeping
+		logger.debug("open_txt successfully closed {0}".format(afile))
+		return f1
 	except IOError as err:
 		logger.debug("something went wrong trying to open {0}. Error: {1}".format(afile, err))
 		return err

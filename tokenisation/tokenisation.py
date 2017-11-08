@@ -85,6 +85,7 @@ def find_capitals(afile):
 	f = open_file(afile)
 	logger.debug('find_capitals successfully opned and read {0}'.format(afile))
 	return re.findall('[A-Z]\w+', f) 
+	
 
 
 def remove_stop_words(afile):
