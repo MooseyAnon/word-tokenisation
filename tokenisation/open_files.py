@@ -10,7 +10,7 @@ import re, logging, sys
 # LOG_FORM output example = INFO 2017-10-26 21:58:20,336 - test message!
 LOG_FORM = '%(levelname)s %(asctime)s - %(message)s'
 
-logging.basicConfig(filename = 'openfiles.txt', 
+logging.basicConfig(filename = 'openfilelogs.txt', 
 					level = logging.DEBUG, 
 					format = LOG_FORM,
 					filemode='w') # get rid of this line to persist logs

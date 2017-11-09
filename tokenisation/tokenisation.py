@@ -1,6 +1,5 @@
 import re, logging, csv 
 
-from nltk.corpus import stopwords
 from open_files import *
 
 
@@ -91,9 +90,9 @@ def find_capitals(afile):
 def remove_stop_words(afile):
 	"""returns a stopword free list"""
 
-	f= file_to_term_split(afile)
+	f= split_file_terms(afile)
 	logger.debug('remove_stop_words successfully opned, read and split {0}'.format(afile))
-	stop_words = stopwords.words('english') # this is from the NLTk library (most common English words) but can easily be replaced with one's own list of stopwords
+	stop_words = open_file('test_stop_words.txt') # this is a random list of some common English words but can easily be replaced with one's own list of stopwords
 	return [word for word in f if word not in stop_words] 
 
 
