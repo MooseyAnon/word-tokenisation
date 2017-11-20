@@ -1,7 +1,7 @@
 from tokenisation import *
 
 
-"""This is all the Filefunction in this foler organised into classes for oop usage"""
+"""This is all the functions in open.py and tokenisation.py organised into classes for oop usage"""
 
 class OpenInput:
 	def __init__(self):
@@ -103,6 +103,7 @@ class TextTokeniser(OpenInput):
 				self.stopwords = default_tokens(swf)
 			except:
 				logger.debug('remove_stop_words could not open your stopword file reverting to default')
+				self.stopwords = default_tokens('test_stop_words.txt')
 		else:
 			self.stopwords = default_tokens('test_stop_words.txt') # come from list of most common english words
 
