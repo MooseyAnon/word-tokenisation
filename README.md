@@ -24,5 +24,10 @@ tonkenisation.py
 
 open_files.py 
 
-- a function that opens files based on file format 
+- an interface function that opens files based on file format 
  
+
+
+classes.py
+
+- contains class version of all the above for oop. 
